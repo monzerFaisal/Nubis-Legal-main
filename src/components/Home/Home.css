@@ -1,0 +1,1921 @@
+/* ======================
+   Global Variables
+   ====================== */
+
+:root {
+  --text-color: #1f2937;
+  --light-bg: #f8fafc;
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --background-color: #ffffff;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --font-family: 'Roboto Slab';
+
+}
+
+/* ======================
+ Base Styles
+ ====================== */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Roboto Slab';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+/* ======================
+ Hero Section
+ ====================== */
+/* Hero Section */
+/* ======================
+ Hero Section
+ ====================== */
+ .hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.hero-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.7);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  color: white;
+  padding: 2rem;
+  
+}
+
+.hero-title {
+  padding-left: 80px;
+  padding-top: 13rem;
+  font-size: clamp(2rem, 5vw, 3.125rem);
+  line-height: 1.2;
+  margin-bottom: 0;
+  max-width: 62.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.highlight {
+  display: inline;
+  color: black;
+  text-shadow: none;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  padding: 2rem 0 4rem 80px;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  margin-bottom: 0;
+  max-width: 37.5rem;
+  opacity: 0.9;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-left: 80px;
+}
+
+.cta-button {
+  padding: 0.8rem 2rem;
+  font-weight: bold;
+  border-radius: 0.625rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-family: 'Roboto Slab';
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.5 ease;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero-title {
+    padding-left: 2rem;
+    padding-top: 10rem;
+  }
+
+  .hero-subtitle {
+    padding: 1.5rem 0 3rem 2rem;
+  }
+
+  .hero-cta {
+    padding-left: 2rem;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero-title {
+    padding-left: 1rem;
+    padding-top: 8rem;
+    font-size: 1.8rem;
+  }
+
+  .highlight {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    padding: 1rem 0 2rem 1rem;
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  .hero-cta {
+    padding-left: 1rem;
+    justify-content: center;
+  }
+
+  .cta-button {
+    width: 102px;
+    max-width: 250px;
+    font-size: 1.1rem;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.9) 30%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  }
+}
+
+/* ======================
+   About Us Section
+   ====================== */
+   .about-us {
+    padding: 6rem 1.5rem;
+    background-color: #ffffff;
+  }
+  
+  .about-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about-us-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-us-blocks {
+    flex: 1 1 400px;
+    max-width: 500px;
+  }
+  
+  .about-us-blocks img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    aspect-ratio: 5/6;
+    object-fit: cover;
+  }
+  
+  .about-us-text {
+    flex: 1 1 500px;
+    padding: 1rem;
+  }
+  
+  .about-us-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #B39957;
+    padding-left: 1rem;
+    line-height: 1.2;
+  }
+  
+  .about-us-text p {
+    font-size: 1.125rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  
+  .about-us-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 0.625rem;
+    font-size: 1.125rem;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .about-us-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ======================
+     Responsive Design
+     ====================== */
+
+  
+  @media (max-width: 768px) {
+    .about-us {
+      padding: 136px 50px;
+    }
+    .about-us-content {
+      gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .about-us img{
+      width: 100%;
+      height: 460px;
+      border-radius: 12px;
+      aspect-ratio: 5 / 6;
+      object-fit: cover;
+    }
+  
+    .about-us-title {
+      font-size: 30px;
+      padding-left: 3px;
+      border-left: 5px solid #B39957;
+    }
+
+    .about-us-blocks{
+      max-width: 300px;
+    }
+    .about-us-text{
+      max-width: 300px;
+    }
+  
+    .about-us-text p {
+      font-size:  15px;
+    }
+  
+    .about-us-btn {
+      width: 100px;
+      max-width: 300px;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+    }
+  }
+  
+  
+  @media (max-width: 480px) {
+    .about-us {
+      padding: 136px 50px;
+    }
+    .about-us-content {
+      gap: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .about-us img{
+      width: 211px;
+      height: 289px;
+      border-radius: 12px;
+      aspect-ratio: 5 / 6;
+      object-fit: cover;
+    }
+  
+    .about-us-title {
+      font-size: 20px;
+      padding-left: 3px;
+      border-left: 5px solid #B39957;
+    }
+
+    .about-us-blocks{
+      max-width: 300px;
+    }
+    .about-us-text{
+      max-width: 300px;
+    }
+  
+    .about-us-text p {
+      font-size:  15px;
+    }
+  
+    .about-us-btn {
+      width: 100px;
+      max-width: 300px;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+    }
+  }
+
+  
+
+/* ======================
+ Features Section
+ ====================== */
+ .features {
+  display: flex;
+  background: rgb(2,0,36) !important;
+  background: linear-gradient(to top, #002B5A 0%, #034892 50%, #055dbb 100%) !important;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background: #fff;
+  gap: 2rem;
+  padding: 136px 50px 136px 50px;
+  margin-top: 130px;
+}
+
+.features-container {
+  display: grid;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+}
+
+.feature-header h2 {
+  display: grid;
+  padding-bottom: 30px;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  line-height: 1.2;
+}
+
+
+
+.features-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center; /* Center cards on smaller screens */
+  max-width: 800px;
+}
+
+.feature-card {
+  background: transparent;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: left;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 384px; /* Ensure cards take full width on smaller screens */
+  height: 250px;
+  border: 4px solid #fff;
+  box-sizing: border-box;
+
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  filter: brightness(0) invert(1);
+  width: 69px;
+  height: 73px;
+  background: #ffffff63;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.3rem;
+}
+
+.feature-card h3 {
+  font-size: 23px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: white;
+  line-height: 1.6;
+}
+
+/* Hover Animation */
+.feature-card:hover .feature-icon {
+  animation: iconBounce 0.6s ease;
+}
+
+/* ======================
+ Responsive Design
+ ====================== */
+
+/* For iPad (768px and below) */
+@media (max-width: 768px) {
+  .features {
+    display: flex;
+    background: rgb(2,0,36) !important;
+    background: linear-gradient(to top, #002B5A 0%, #034892 50%, #055dbb 100%) !important;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background: #fff;
+    gap: 2rem;
+    padding: 100px 30px 100px 30px;
+    margin-top: 130px;
+  }
+  
+  .features-container {
+    display: grid;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .feature-header h2 {
+    display: grid;
+    padding-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    line-height: 1.2;
+  }
+  
+  
+  
+  .features-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center; /* Center cards on smaller screens */
+    max-width: 668px;
+  }
+  
+  .feature-card {
+    background: transparent;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: left;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 320px; /* Ensure cards take full width on smaller screens */
+    height: 200px;
+    border: 3px solid #fff;
+    box-sizing: border-box;
+  
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    background: #ffffff63;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.3rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 15px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .feature-card p {
+    font-size: 10px;
+    color: white;
+    line-height: 1.6;
+  }
+  
+  /* Hover Animation */
+  .feature-card:hover .feature-icon {
+    animation: iconBounce 0.6s ease;
+  }
+}
+
+
+/* For Phones (480px and below) */
+@media (max-width: 480px) {
+  .features {
+    display: flex;
+    background: rgb(2,0,36) !important;
+    background: linear-gradient(to top, #002B5A 0%, #034892 50%, #055dbb 100%) !important;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background: #fff;
+    gap: 2rem;
+    padding: 80px 30px;
+    margin-top: 130px;
+  }
+  
+  .features-container {
+    display: grid;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .feature-header h2 {
+    display: grid;
+    padding-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    line-height: 1.2;
+  }
+  
+  
+  
+  .features-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center; /* Center cards on smaller screens */
+    max-width: 668px;
+  }
+  
+  .feature-card {
+    background: transparent;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: left;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 320px; /* Ensure cards take full width on smaller screens */
+    max-height: 180px;
+    border: 3px solid #fff;
+    box-sizing: border-box;
+  
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    background: #ffffff63;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.3rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 15px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .feature-card p {
+    font-size: 10px;
+    color: white;
+    line-height: 1.6;
+  }
+  
+  /* Hover Animation */
+  .feature-card:hover .feature-icon {
+    animation: iconBounce 0.6s ease;
+  }
+}
+
+/* ======================
+   ceo Section
+   ====================== */
+
+
+   .ceo {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 91px 136px 91px;
+        background-color: #ffffff;
+   }
+  
+  .ceo-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+  }
+  
+  .ceo-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  
+  .image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 8px;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  
+  .ceo-text {
+    font-size: 20px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+    padding-bottom: 10px;
+    
+  }
+  
+  .ceo-text p{
+    font-size: 20px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+    padding-bottom: 10px;
+    padding-top: 370px;
+  }
+
+
+
+.ceo-blocks {
+
+    gap: 1.5rem;
+    width: 450px;
+    height: 440px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.ceo-blocks img{
+  width: 500px;
+  height: 590px;
+}
+.ceo-title {
+  font-family: 'Roboto Slab';
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-left: 6px solid #B39957;
+  padding-left: 1rem;
+}
+
+/* For iPad (768px and below) */
+@media (max-width: 768px) {
+  
+  .ceo {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 91px 136px 91px;
+        background-color: #ffffff;
+   }
+  
+  .ceo-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+  }
+  
+  .ceo-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  
+  .image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 8px;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  
+  .ceo-text {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+    padding-bottom: 10px;
+  }
+  
+  .ceo-text p{
+    padding-top: 170px;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+    padding-bottom: 10px;
+    max-width: 550px;
+  }
+
+
+
+.ceo-blocks {
+
+    gap: 1.5rem;
+    width: 450px;
+    height: 440px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.ceo-blocks img{
+  max-width: 300px;
+  max-height: 410px;
+}
+.ceo-title {
+  font-family: 'Roboto Slab';
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-left: 6px solid #B39957;
+  padding-left: 1rem;
+}
+}
+/* For Phones (480px and below) */
+@media (max-width: 480px) {
+  .ceo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 136px 15px;
+    background-color: #ffffff;
+  }
+  
+  .ceo-container {
+    display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        max-width: 400px;
+  }
+  
+  .ceo-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  
+  .image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 8px;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  
+  .ceo-text {
+    
+    max-width: 500px;
+    
+    
+  }
+  
+  .ceo-text p{
+    padding-bottom: 10px;
+    font-size: 10px;
+    text-align: justify;
+    
+    
+  }
+
+
+
+.ceo-blocks {
+  display: grid;
+
+    gap: 1.5rem;
+    width: 450px;
+    height: 420px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.ceo-blocks img{
+  max-width: 400px;
+  max-height: 410px;
+  margin-left: 50px;
+}
+
+.ceo-title {
+  font-family: 'Roboto Slab';
+  font-size: 20px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-left: 6px solid #B39957;
+  padding-left: 1rem;
+}
+}
+
+/* ======================
+   Services Section
+   ====================== */
+   .services {
+    padding: 136px 50px 136px 50px;
+    background: linear-gradient(45deg, #f8fafc, #f1f5f9);
+  }
+  
+  .services-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  .services-title{
+    font-family: 'Roboto Slab';
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border-left: 5px solid #B39957;
+    padding-left: 1rem;
+  }
+  .services-header h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #111; /* Added for better contrast */
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding-top: 20px;
+  }
+  .swiper-wrapper{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .service-item {
+    background: rgb(3, 45, 101); /* Faded blue with transparency */
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 410px;
+    width: 370px;
+    
+    /* Optional enhancement */
+    border: 1px solid rgba(191, 219, 254, 0.2); /* Light blue border */
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.05); /* Subtle blue shadow */
+    
+  }
+  
+  .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background-color: #213d8a; /* Your blue background */
+    border-radius: 12px;
+  }
+  
+  .service-icon img {
+    filter: brightness(0) invert(1); /* Apply filter to image only */
+    width: 60%; /* Control icon size within container */
+    height: 60%;
+    object-fit: contain;
+  }
+  
+  .service-item h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-item p {
+    font-size: 1rem;
+    color: white;
+    line-height: 1.6;
+  }
+  
+  .service-item div:last-child {
+    position: absolute;
+    bottom: -2.5px;
+    right: 1rem;
+    font-size: 2.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-item:hover div:last-child {
+    transform: translateX(5px);
+  }
+  
+  /* ======================
+     Responsive Design
+     ====================== */
+  
+
+  /* For iPad (768px and below) */
+  @media (max-width: 768px) {
+    .services {
+      padding: 136px 50px 136px 50px;
+      background: linear-gradient(45deg, #f8fafc, #f1f5f9);
+    }
+    
+    .services-header {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    .services-title{
+      font-family: 'Roboto Slab';
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      border-left: 5px solid #B39957;
+      padding-left: 1rem;
+    }
+    .services-header h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #111; /* Added for better contrast */
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding-top: 20px;
+    }
+    .swiper-wrapper{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .service-item {
+      background: rgb(3, 45, 101); /* Faded blue with transparency */
+      background: rgb(3, 45, 101);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: left;
+      position: relative;
+      transition: transform 0.3sease, box-shadow 0.3sease;
+      max-height: 330px;
+      max-width: 290px;
+      border: 1px solid rgba(191, 219, 254, 0.2);
+      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.05);
+  
+    }
+    
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 56px;
+      max-height: 56px;
+      background-color: #213d8a; /* Your blue background */
+      border-radius: 12px;
+    }
+    
+    .service-icon img {
+      filter: brightness(0) invert(1);
+      max-width: 47%;
+      max-height: 52%;
+      object-fit: contain;
+  
+    }
+    
+    .service-item h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    
+    .service-item p {
+      font-size: 1rem;
+      color: white;
+      line-height: 1.6;
+    }
+    
+    .service-item div:last-child {
+      position: absolute;
+      bottom: -2.5px;
+      right: 1rem;
+      font-size: 2.5rem;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+    
+    .service-item:hover div:last-child {
+      transform: translateX(5px);
+    }
+  }  
+  
+  /* For Phones (480px and below) */
+  @media (max-width: 480px) {
+    .services {
+      padding: 136px 30px 136px 30px;
+      background: linear-gradient(45deg, #f8fafc, #f1f5f9);
+    }
+    
+    .services-header {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    .services-title{
+      font-family: 'Roboto Slab';
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      border-left: 5px solid #B39957;
+      padding-left: 1rem;
+    }
+    .services-header h2 {
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #111; /* Added for better contrast */
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding-top: 20px;
+    }
+    .swiper-wrapper{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .service-item {
+      background: rgb(3, 45, 101); /* Faded blue with transparency */
+      background: rgb(3, 45, 101);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: left;
+      position: relative;
+      transition: transform 0.3sease, box-shadow 0.3sease;
+      max-height: 260px;
+      max-width: 243px;
+      border: 1px solid rgba(191, 219, 254, 0.2);
+      box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.05);
+  
+    }
+    
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .service-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 45px;
+      max-height: 45px;
+      background-color: #213d8a; /* Your blue background */
+      border-radius: 12px;
+    }
+    
+    .service-icon img {
+      filter: brightness(0) invert(1);
+      max-width: 41%;
+      max-height: 44%;
+      object-fit: contain;
+  
+    }
+    
+    .service-item h3 {
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    
+    .service-item p {
+      font-size: 10px;
+      color: white;
+      line-height: 1.6;
+    }
+    
+    .service-item div:last-child {
+      position: absolute;
+      bottom: -2.5px;
+      right: 1rem;
+      font-size: 2.5rem;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+    
+    .service-item:hover div:last-child {
+      transform: translateX(5px);
+    }
+  }
+
+
+
+/* ======================
+   Testimonials Section
+   ====================== */
+  /* ----------- Testimonials ----------- */
+.testimonials {
+  padding: 136px 91px;
+  background: linear-gradient(135deg, #f9fafb, #e5e7eb);
+  text-align: center;
+}
+
+.testimonials-header {
+  font-family: 'Roboto Slab';
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-bottom: 20px;
+  color: #111827;
+}
+
+.testimonials-title{
+    font-family: 'Roboto Slab';
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-bottom: 20px;
+  color: #111827;
+}
+
+/* Testimonial Wrapper */
+.testimonial-wrapper {
+  position: relative;
+  margin-top: 48px;
+}
+
+/* Avatar */
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -48px;
+  left: 35%;
+  transform: translateX(-50%);
+  border: 4px solid white;
+  z-index: 2;
+  object-fit: cover;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: #002147;
+  padding: 64px 32px 48px;
+  border-radius: 16px;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quote-mark {
+  color: #FFB800;
+  font-size: 48px;
+  font-family: serif;
+  display: block;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Client Info */
+.client-info {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.client-name {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.client-role {
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+/* Testimonial Text */
+.testimonial-text {
+  color: white;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Dots Navigation */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  width: 32px;
+  background-color: #2563eb;
+  border-radius: 999px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 136px 50px;
+    background: linear-gradient(135deg, #f9fafb, #e5e7eb);
+    text-align: center;
+  }
+  
+  .testimonials-header {
+    font-family: 'Roboto Slab';
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-bottom: 20px;
+    color: #111827;
+  }
+  
+  .testimonials-title{
+      font-family: 'Roboto Slab';
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-bottom: 20px;
+    color: #111827;
+  }
+  
+  /* Testimonial Wrapper */
+  .testimonial-wrapper {
+    position: relative;
+    margin-top: 48px;
+  }
+  
+  /* Avatar */
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -48px;
+    left: 35%;
+    transform: translateX(-50%);
+    border: 4px solid white;
+    z-index: 2;
+    object-fit: cover;
+  }
+  
+  /* Testimonial Card */
+  .testimonial-card {
+    background: #002147;
+    padding: 64px 32px 48px;
+    border-radius: 16px;
+    position: relative;
+    max-width: 500px;
+    max-height: 335px;
+    margin: 0 auto;
+  }
+  
+  .quote-mark {
+    color: #FFB800;
+    font-size: 38px;
+    font-family: serif;
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  /* Client Info */
+  .client-info {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  
+  .client-name {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .client-role {
+    color: #e5e7eb;
+    font-size: 0.9rem;
+  }
+  
+  /* Testimonial Text */
+  .testimonial-text {
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  /* Dots Navigation */
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+  
+  .dot {
+    width: 6px;
+    height: 6px;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .dot.active {
+    width: 22px;
+    background-color: #2563eb;
+    border-radius: 999px;
+  }
+  }
+
+
+@media (max-width: 480px) {
+  .testimonials {
+      padding: 60px 20px;
+  }
+  
+  .testimonial-card {
+      padding: 48px 16px 32px;
+  }
+  
+  .testimonials-header {
+      font-size: 24px;
+  }
+  
+  .avatar {
+      width: 80px;
+      height: 80px;
+      top: -40px;
+  }
+  
+  .quote-mark {
+      font-size: 36px;
+  }
+}
+
+
+/* Blog Section Styles */
+.blog-section {
+  padding: 136px 91px 0px 91px;
+  background: linear-gradient(45deg, #f8fafc, #f1f5f9);
+}
+
+.blog-header {
+  font-family: 'Roboto Slab';
+  font-size: 40px;
+  font-weight: bold;
+  
+  border-left: 6px solid #B39957;
+}
+
+.blog-header h2 {
+  padding-left: 10px;
+  font-size: 40px;
+}
+
+.blog-grid {
+  display: flex;
+  gap: 24px; /* Spacing between cards */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  padding-bottom: 1rem;
+ 
+  padding-top: 30px;
+  padding-bottom: 50px;
+  /* Hide scrollbar styles */
+  scrollbar-width: none; /* For Firefox */
+}
+
+.blog-grid::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+.blog-item {
+  background: #e5e7eb;
+  border-radius: 20px;
+  padding: 10px; /* Adjust padding */
+  flex: 0 0 auto; /* Prevent shrinking and makes the width fixed */
+  min-width: 380px; /* Sets consistent width for the cards */
+  min-height: 500px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start; /* Aligns the card to the start when scrolling */
+  position: relative; /* For positioning elements like the circle */
+}
+
+.blog-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.blog-image img {
+  width: 350px;
+  height: 350px;
+  border-radius: 16px; /* Rounded corners for the image */
+  object-fit: cover;
+}
+
+.blog-item h3 {
+  font-size: 23px;
+  font-weight: bold;
+  color: #111;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.blog-item p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.blog-item a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2563eb;
+  transition: color 0.3s ease;
+}
+
+.blog-item a:hover {
+  color: #1d4ed8;
+}
+
+/* Add the decorative circle in the bottom-right corner */
+.blog-item::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background: #374151;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+/* Responsive Adjustments */
+
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 136px 50px 0px 50px;
+    background: linear-gradient(45deg, #f8fafc, #f1f5f9);
+  }
+  
+  .blog-header {
+    font-family: 'Roboto Slab';
+    font-size: 30px;
+    font-weight: bold;
+    
+    border-left: 6px solid #B39957;
+  }
+  
+  .blog-header h2 {
+    padding-left: 10px;
+    font-size: 30px;
+  }
+  
+  .blog-grid {
+    display: flex;
+    gap: 24px; /* Spacing between cards */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding-bottom: 1rem;
+   
+    padding-top: 30px;
+    padding-bottom: 50px;
+    /* Hide scrollbar styles */
+    scrollbar-width: none; /* For Firefox */
+  }
+  
+  .blog-grid::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+  }
+  
+  .blog-item {
+    background: #e5e7eb;
+    border-radius: 20px;
+    padding: 10px; /* Adjust padding */
+    flex: 0 0 auto; /* Prevent shrinking and makes the width fixed */
+    min-width: 280px; /* Sets consistent width for the cards */
+    min-height: 400px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start; /* Aligns the card to the start when scrolling */
+    position: relative; /* For positioning elements like the circle */
+  }
+  
+  .blog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .blog-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 16px; /* Rounded corners for the image */
+    object-fit: cover;
+  }
+  
+  .blog-item h3 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #111;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .blog-item p {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .blog-item a {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2563eb;
+    transition: color 0.3s ease;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .blog-section {
+    padding: 136px 30px 0px 30px;
+    background: linear-gradient(45deg, #f8fafc, #f1f5f9);
+  }
+  
+  .blog-header {
+    font-family: 'Roboto Slab';
+    font-size: 20px;
+    font-weight: bold;
+    
+    border-left: 6px solid #B39957;
+  }
+  
+  .blog-header h2 {
+    padding-left: 10px;
+    font-size: 20px;
+  }
+  
+  .blog-grid {
+    display: flex;
+    gap: 24px; /* Spacing between cards */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding-bottom: 1rem;
+   
+    padding-top: 30px;
+    padding-bottom: 50px;
+    /* Hide scrollbar styles */
+    scrollbar-width: none; /* For Firefox */
+  }
+  
+  .blog-grid::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+  }
+  
+  .blog-item {
+    background: #e5e7eb;
+    border-radius: 20px;
+    padding: 10px; /* Adjust padding */
+    flex: 0 0 auto; /* Prevent shrinking and makes the width fixed */
+    min-width: 180px; /* Sets consistent width for the cards */
+    min-height: 400px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start; /* Aligns the card to the start when scrolling */
+    position: relative; /* For positioning elements like the circle */
+  }
+  
+  .blog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .blog-image img {
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 16px; /* Rounded corners for the image */
+    object-fit: cover;
+  }
+  
+  .blog-item h3 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #111;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .blog-item p {
+    font-size: 10px;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .blog-item a {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2563eb;
+    transition: color 0.3s ease;
+  }
+}
+
+/* Scroll Container */
+.scroll-container {
+  display: flex; /* Arrange items in a row */
+  gap: 20px; /* Spacing between cards */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 10px 0;
+  scroll-snap-type: x mandatory; /* Snap horizontally */
+  scroll-behavior: smooth; /* Smooth scroll when swiped/flung */
+
+  /* Hide the scrollbar in WebKit-based browsers */
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar on Chrome/Safari */
+}
+
+/* Hide scrollbar on Firefox (and modern browsers) */
+.scroll-container {
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+
+
+
+/*----- Background Image Section ----*/
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 136px 30px 136px 30px;
+}
+
+.image-section-bg {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  font-family: 'Roboto Slab';
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .text-container {
+    font-size: 20px;
+    left: 5%;
+  }
+
+  .circle {
+    width: 60px;
+    height: 60px;
+    right: 5%;
+  }
+  
+}
+@media (max-width: 480px) {
+  .text-container {
+    font-size: 15px;
+    left: 5%;
+  }
+
+  .circle {
+    width: 35px;
+    height: 35px;
+    right: 4%;
+    top: 110px;
+  }
+  
+}
+
+/* ======================
+   Responsive Design
+   ====================== */
+
+/* For Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .image-section {
+    padding: 0px 20px 100px 20px; /* Adjusted padding */
+  }
+
+  .image-section-bg {
+    height: 250px; /* Reduced height */
+  }
+
+  .text-container {
+    font-size: 26px; /* Smaller font size */
+  }
+
+  .circle {
+    width: 70px; /* Smaller circle */
+    height: 70px;
+  }
+}
+
+/* For iPad (768px and below) */
+@media (max-width: 768px) {
+  .image-section {
+    padding: 0px 15px 80px 15px; /* Further reduced padding */
+  }
+
+  .image-section-bg {
+    height: 200px; /* Further reduced height */
+  }
+
+  .text-container {
+    font-size: 22px; /* Smaller font size */
+    left: 5%; /* Adjusted position */
+  }
+
+  .circle {
+    width: 60px; /* Smaller circle */
+    height: 60px;
+    right: 5%; /* Adjusted position */
+  }
+}
+
+/* For Phones (480px and below) */
+@media (max-width: 480px) {
+  .image-section {
+    padding: 0px 10px 60px 10px; /* Minimal padding */
+  }
+
+  .image-section-bg {
+    height: 150px; /* Minimal height */
+  }
+
+  .text-container {
+    font-size: 18px; /* Smaller font size */
+    left: 5%; /* Adjusted position */
+  }
+
+  .circle {
+    width: 50px; /* Smaller circle */
+    height: 50px;
+    right: 5%; /* Adjusted position */
+  }
+}
+
