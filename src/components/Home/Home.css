@@ -1919,3 +1919,18 @@ body {
   }
 }
 
+
+/* تأكد من إضافة هذا الكود أو ما يشابهه لتطبيق تأثير fade-up */
+
+.feature-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.feature-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* باقي التنسيقات الخاصة بك */
