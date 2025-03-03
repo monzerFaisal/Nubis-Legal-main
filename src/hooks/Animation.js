@@ -8,8 +8,7 @@ const useAnimation = (ref, threshold = 0.2) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // يمكن إزالة المراقب بعد الظهور إذا رغبت:
-          // observer.unobserve(ref.current);
+            // observer.unobserve(ref.current);
         }
       },
       { threshold }
