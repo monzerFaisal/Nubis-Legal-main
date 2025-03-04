@@ -10,7 +10,7 @@ import { IoMdQuote } from "react-icons/io";
 
 // Internal Components
 import ImageComponent from '../ImageComponent/ImageComponent';
-import useAnimation from '../../hooks/Animation'; // تأكد من صحة المسار
+import useAnimation from '../../Animations/Animation'; // تأكد من صحة المسار
 
 // Assets
 import backgroundImage from '../img/assets/Home/scrollable banner home page .png';
