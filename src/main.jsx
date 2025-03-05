@@ -24,7 +24,7 @@ import RealEstateLegalSupport from "./components/Services/ServicesPages/RealEsta
 import TaxandFinancialLegalServices from "./components/Services/ServicesPages/TaxandFinancialLegalServices";
 import RegulatoryandLegalCompliance from "./components/Services/ServicesPages/RegulatoryandLegalCompliance";
 
-const MainApp = () => {
+export const MainApp = () => {
   const [showMainContent, setShowMainContent] = useState(false);
 
   return (
@@ -46,7 +46,7 @@ const MainApp = () => {
               {/* صفحات الخدمات */}
               <Route path="/services/contract-drafting" element={<ContractDraftingandReview />} />
               <Route path="/services/legal-consultation" element={<LegalConsultation />} />
-              <Route path="/services/company-formation" element={<CompanyFormationandRegistration />} />
+              <Route path="/services/companyformation" element={<CompanyFormationandRegistration />} />
               <Route path="/services/trademark-registration" element={<TrademarkandIntellectualPropertyRegistration />} />
               <Route path="/services/document-preparation" element={<LegalDocumentPreparation />} />
               <Route path="/services/debt-collection" element={<DebtCollection />} />

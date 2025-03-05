@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react";
-import "./IntroVideo.css"; // ملف التنسيقات
+import { useState, useEffect, useCallback } from "react";
+import PropTypes from "prop-types";
+import "./IntroVideo.css";
 
 const IntroVideo = ({ onFinish }) => {
   const [isVisible, setIsVisible] = useState(true);
 
+  const handleFinish = useCallback(() => {
+    setIsVisible(false);
+    if (onFinish) onFinish();
+  }, [onFinish]);
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      handleFinish(); // إخفاء الفيديو بعد 10 ثوانٍ احتياطيًا
+      handleFinish(); // Fallback video dismissal after 10 seconds
     }, 10000);
 
     return () => clearTimeout(timer);
-  }, []);
-
-  const handleFinish = () => {
-    setIsVisible(false);
-    if (onFinish) onFinish();
-  };
+  }, [handleFinish]);
 
   return (
     isVisible && (
@@ -33,6 +34,10 @@ const IntroVideo = ({ onFinish }) => {
       </div>
     )
   );
+};
+
+IntroVideo.propTypes = {
+  onFinish: PropTypes.func
 };
 
 export default IntroVideo;
